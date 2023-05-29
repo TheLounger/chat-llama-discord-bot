@@ -657,15 +657,15 @@ async def pic(ctx, prompt=None):
             payload["width"] = 512
             payload["height"] = 512
         if positive_prompt_prefix: 
-            payload["prompt"] = f'{positive_prompt_prefix} {image_prompt}'
+            payload["prompt"] = f'{positive_prompt_prefix}, {image_prompt}'
         if positive_prompt_suffix:
-            payload["prompt"] += " " + positive_prompt_suffix
+            payload["prompt"] += ", " + positive_prompt_suffix
         if negative_prompt: payload["negative_prompt"] = negative_prompt
         if presets:
             for preset in presets:
                 if preset['trigger'].lower() in payload["prompt"].lower() or preset['trigger'].lower() in ctx.message.clean_content.lower():
-                    payload["prompt"] += " " + preset['positive_prompt']
-                    payload["negative_prompt"] += " " + preset['negative_prompt']
+                    payload["prompt"] += ", " + preset['positive_prompt']
+                    payload["negative_prompt"] += ", " + preset['negative_prompt']
 
         # Make sure loras are not repeated
         re_loras = r"\<lora:\w+:\d\.\d\>"
