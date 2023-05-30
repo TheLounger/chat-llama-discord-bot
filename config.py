@@ -65,4 +65,7 @@ response_replacements = {
     ':laughs:': "😆", # :laughing:
     ':sweat_smile:': "😅", # :sweat_smile:
     ':D': "😄", # :smile:
+    ':smirks:': "😏", # :smirk:
+    ':winks:': "😉", # :wink:
+    ':thumbs up:': "👍", # :thumbsup:
 }
