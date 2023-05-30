@@ -59,3 +59,10 @@ behavior = {
     'reply_to_bots_when_adressed' : 0.5, # If set to 1, bots can be stuck in an infinite conversation
     'go_wild_in_channel' : True, 
     'conversation_recency' : 600}
+
+response_replacements = {
+    ':blushes:': "😳", # :flushed:
+    ':laughs:': "😆", # :laughing:
+    ':sweat_smile:': "😅", # :sweat_smile:
+    ':D': "😄", # :smile:
+}

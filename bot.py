@@ -407,6 +407,9 @@ def chatbot_wrapper_wrapper(user_input): #my naming schemes are hilarious
     # Adding conversation to the history
     shared.history['internal'].append([user_input['text'],last_resp])
     shared.history['visible'].append([user_input['text'],last_resp])
+    if hasattr(config, 'response_replacements'):
+        for k, v in config.response_replacements.items():
+            last_resp = last_resp.replace(k, v)
     # Guess I could yield a result for each paragraph here, would give the bot more character
     return last_resp    
 
