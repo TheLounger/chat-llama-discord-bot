@@ -794,7 +794,7 @@ def get_character_data(character):
         if filepath.exists():
             break
     if filepath:
-        with open(filepath) as f:
+        with open(filepath, encoding='utf-8') as f:
             data = json.load(f) if filepath.suffix == ".json" else yaml.safe_load(f)
             return data
 
